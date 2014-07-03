@@ -1,0 +1,19 @@
+{
+  "name": "karma-browserify-workflow",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Friend <james@jsdf.co> (http://jsdf.co/)",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-karma": "0.0.4",
+    "gulp": "^3.8.5",
+    "karma": "^0.12.16",
+    "parcelify": "^0.11.3",
+    "less-css-stream": "^0.1.2",
+    "glob": "^4.0.3"
+  }
+}

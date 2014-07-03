@@ -1,0 +1,18 @@
+{
+  "name": "foo",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "style": "*.less",
+  "transforms": [
+    "less-css-stream"
+  ],
+  "author": "James Friend <james@jsdf.co> (http://jsdf.co/)",
+  "license": "ISC",
+  "dependencies": {
+    "should": "^4.0.4"
+  }
+}
