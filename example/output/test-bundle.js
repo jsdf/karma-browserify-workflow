@@ -10,12 +10,12 @@ describe('a', function() {
   })
 })
 
-},{"../a":"/Users/jfriend/code/karma-browserify-workflow/example/foo/a.js","assert":"/Users/jfriend/code/karma-browserify-workflow/node_modules/parcelify/node_modules/browserify/node_modules/assert/assert.js"}],"/Users/jfriend/code/karma-browserify-workflow/example/foo/a.js":[function(require,module,exports){
+},{"../a":3,"assert":4}],3:[function(require,module,exports){
 
 module.exports = {a: 'a'};
 
 
-},{}],"/Users/jfriend/code/karma-browserify-workflow/node_modules/parcelify/node_modules/browserify/node_modules/assert/assert.js":[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 // http://wiki.commonjs.org/wiki/Unit_Testing/1.0
 //
 // THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
@@ -377,14 +377,14 @@ var objectKeys = Object.keys || function (obj) {
   return keys;
 };
 
-},{"util/":"/Users/jfriend/code/karma-browserify-workflow/node_modules/parcelify/node_modules/browserify/node_modules/assert/node_modules/util/util.js"}],"/Users/jfriend/code/karma-browserify-workflow/node_modules/parcelify/node_modules/browserify/node_modules/assert/node_modules/util/support/isBufferBrowser.js":[function(require,module,exports){
+},{"util/":6}],5:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],"/Users/jfriend/code/karma-browserify-workflow/node_modules/parcelify/node_modules/browserify/node_modules/assert/node_modules/util/util.js":[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -973,8 +973,33 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-}).call(this,require("2vdXnZ"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":"/Users/jfriend/code/karma-browserify-workflow/node_modules/parcelify/node_modules/browserify/node_modules/assert/node_modules/util/support/isBufferBrowser.js","2vdXnZ":"/Users/jfriend/code/karma-browserify-workflow/node_modules/parcelify/node_modules/browserify/node_modules/process/browser.js","inherits":"/Users/jfriend/code/karma-browserify-workflow/node_modules/parcelify/node_modules/inherits/inherits_browser.js"}],"/Users/jfriend/code/karma-browserify-workflow/node_modules/parcelify/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+}).call(this,require("FWaASH"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./support/isBuffer":5,"FWaASH":8,"inherits":7}],7:[function(require,module,exports){
+if (typeof Object.create === 'function') {
+  // implementation from standard node.js 'util' module
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    ctor.prototype = Object.create(superCtor.prototype, {
+      constructor: {
+        value: ctor,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+  };
+} else {
+  // old school shim for old browsers
+  module.exports = function inherits(ctor, superCtor) {
+    ctor.super_ = superCtor
+    var TempCtor = function () {}
+    TempCtor.prototype = superCtor.prototype
+    ctor.prototype = new TempCtor()
+    ctor.prototype.constructor = ctor
+  }
+}
+
+},{}],8:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -1039,31 +1064,4 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 
-},{}],"/Users/jfriend/code/karma-browserify-workflow/node_modules/parcelify/node_modules/inherits/inherits_browser.js":[function(require,module,exports){
-if (typeof Object.create === 'function') {
-  // implementation from standard node.js 'util' module
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    ctor.prototype = Object.create(superCtor.prototype, {
-      constructor: {
-        value: ctor,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-  };
-} else {
-  // old school shim for old browsers
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    var TempCtor = function () {}
-    TempCtor.prototype = superCtor.prototype
-    ctor.prototype = new TempCtor()
-    ctor.prototype.constructor = ctor
-  }
-}
-
-},{}],"/Users/jfriend/code/karma-browserify-workflow/null.js":[function(require,module,exports){
-
-},{}]},{},["/Users/jfriend/code/karma-browserify-workflow/null.js"])
+},{}]},{},[])
